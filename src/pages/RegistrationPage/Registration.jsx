@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Registration.module.scss";
 
@@ -17,7 +18,9 @@ const Registration = () => {
           <div className={styles.registrationButton}>
             <button>Зарегистрироваться</button>
           </div>
-          <div className={styles.hasAccauntText}>У меня есть аккаунт</div>
+          <div className={styles.hasAccauntText}>
+            <Link to={"/authorization"}>У меня есть аккаунт</Link>
+          </div>
         </div>
       </div>
     </div>
