@@ -1,0 +1,28 @@
+.authorization {
+  .authorization_wrapper {
+    padding-top: 150px;
+    .authorization_form {
+      max-width: 260px;
+      margin: auto;
+      text-align: center;
+      .authorization_bText {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      input {
+        padding: 10px;
+        margin-bottom: 30px;
+        font-size: 17px;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 17px;
+      }
+      .dontHaveAccauntText {
+        border-bottom: 1px solid #000;
+        max-width: 155px;
+        margin: 25px auto;
+      }
+    }
+  }
+}
