@@ -1,0 +1,116 @@
+.cart {
+  padding: 100px 0;
+  .cart_wrapper {
+    max-width: 1280px;
+    margin: auto;
+    font-size: 17px;
+    .cart_textRow {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      .cart_bText {
+        font-size: 24px;
+      }
+      .cart_clear {
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+          transition: 0.2s ease;
+        }
+      }
+    }
+    .cart_items {
+      .cart_item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba($color: #000000, $alpha: 0.2);
+        padding: 20px;
+        margin-bottom: 30px;
+        .item_counter {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          #item_action button {
+            font-size: 17px;
+            background-color: transparent;
+            border: 1px solid black;
+            &:hover {
+              background-color: #000000;
+              color: white;
+              cursor: pointer;
+              transition: 0.5s ease;
+            }
+          }
+          .item_plus button {
+            padding: 2px 10px 3px 10px;
+            border-radius: 50%;
+          }
+          .item_minus button {
+            padding: 2px 8px 3px 8px;
+            border-radius: 50%;
+          }
+        }
+        .itemDelete button {
+          padding: 2px 9px 4px 9px;
+          border-radius: 50%;
+          font-size: 17px;
+          background-color: transparent;
+          border: 1px solid black;
+          &:hover {
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s ease;
+          }
+        }
+      }
+    }
+    .cart_checkoutItems {
+      text-align: right;
+      button {
+        border: 1px solid black;
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 17px;
+        &:hover {
+          background-color: black;
+          color: white;
+          transition: 0.5s ease;
+        }
+      }
+    }
+    .deliveryForm {
+      .needDeliveyText {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+        max-width: 190px;
+      }
+      #needDeliverySText {
+        max-width: 166px;
+      }
+      .addressInput {
+        margin-top: 10px;
+        input {
+          font-size: 17px;
+          border: none;
+          border-bottom: 1px solid #000;
+          padding: 10px;
+          &:focus {
+            outline: none;
+          }
+        }
+        span {
+          opacity: 0.5;
+          margin-left: 15px;
+        }
+      }
+      .deliveryPrice {
+        margin-top: 20px;
+      }
+    }
+  }
+}
