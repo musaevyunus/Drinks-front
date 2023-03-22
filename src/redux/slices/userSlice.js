@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
+  loggedUser: null,
   token: null,
 };
 
@@ -63,10 +64,11 @@ export const authorization = createAsyncThunk(
         }),
       });
       const token = await authorization.json();
+      const loggedUser = parseJwt(token);
       if (token.error) {
         return thunkAPI.rejectWithValue(token.error);
       }
-      return token;
+      return { token, loggedUser };
     } catch (err) {
       return thunkAPI.rejectWithValue(err);
     }
@@ -81,13 +83,20 @@ export const userSlice = createSlice({
     builder
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.users = action.payload;
+        state.token = localStorage.getItem("token");
+        state.loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
       })
       .addCase(registration.fulfilled, (state, action) => {
         state.users.push(action.payload);
       })
       .addCase(authorization.fulfilled, (state, action) => {
-        localStorage.setItem("token", action.payload);
-        state.token = action.payload
+        localStorage.setItem("token", action.payload.token);
+        localStorage.setItem(
+          "loggedUser",
+          JSON.stringify(action.payload.loggedUser)
+        );
+        state.token = action.payload.token;
+        state.loggedUser = action.payload.loggedUser;
       });
   },
 });

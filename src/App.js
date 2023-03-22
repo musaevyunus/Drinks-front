@@ -19,6 +19,7 @@ function App() {
         </Routes>
       ) : (
         <Routes>
+          <Route path="/cart/:id" element={<Cart />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/authorization" element={<Authorization />} />
         </Routes>
