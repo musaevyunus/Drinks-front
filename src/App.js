@@ -23,6 +23,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="/cart/:id" element={<Cart />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/authorization" element={<Authorization />} />
         </Routes>
