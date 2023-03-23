@@ -1,13 +1,13 @@
-import { Routes } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import './App.css';
-import Header from './components/header/header';
 
 function App() {
+  const token = useSelector((state) => state.users.token);
+
   return (
     <div className="App">
-      <Header/>
-
       <Routes>
         
       </Routes>
