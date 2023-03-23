@@ -1,0 +1,245 @@
+.textMenu {
+    display: flex;
+    justify-content: center;
+    color: #ff9800db;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-family: cursive;
+}
+.divCointener {
+    display: flex;
+    flex-wrap: wrap;
+}
+.divCointenerCard {
+    display: flex;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+.img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+.divOpisanie {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+    h2 {
+        font-size: 32px;
+        font-family: cursive;
+    }
+    div {
+        font-family: cursive;
+    }
+}
+
+.img:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
+  .divPriceAndBtn{
+    display: flex;
+    justify-content: space-around;
+    button {
+    font-size: 18px;
+    height: 55px;
+    width: 140px;
+    border: none;
+    background: #ff9800db;
+    color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease; 
+    }
+    button:hover {
+        background: rgba(0,0,0,0);
+        color: #ff9800db;;
+        box-shadow: inset 0 0 0 3px #ff9800db;
+      }
+  }
+
+  h1 {
+    font-family: cursive;
+    color: #ff9800db;
+  }
+
+  .divCointenerKombo {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    img {
+        height: 550px!important;
+        width: 650px!important;
+    }
+  }
+
+.textPrice {
+    color: #f2f2f2;
+}
+
+
+/* Общие стили */
+*, *:after, *:before {  
+	box-sizing: border-box; 
+}
+.clearfix:before, .clearfix:after { 
+	content: ''; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+.hover_text_one {
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+.hover_text_one figure {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	overflow: hidden;
+	background: #527c82;
+	text-align: center;
+	cursor: pointer;
+}
+.hover_text_one figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	opacity: 0.8;
+}
+.hover_text_one figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.hover_text_one figure figcaption::before,
+.hover_text_one figure figcaption::after {
+	pointer-events: none;
+}
+.hover_text_one figure figcaption{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.hover_text_one figure h3 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+.hover_text_one figure h3 span {
+	font-weight: 800;
+}
+.hover_text_one figure h3,
+.hover_text_one figure p {
+	margin: 0;
+}
+.hover_text_one figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Эффект при наведении */
+figure.effect_text_three {
+	background: #527c82;
+}
+figure.effect_text_three img {
+	width: -webkit-calc(100% + 20px);
+	width: calc(100% + 20px);
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	transform: scale(1.1);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+figure.effect_text_three:hover img {
+	opacity: 0.4;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+figure.effect_text_three figcaption {
+	text-align: left;
+}
+figure.effect_text_three h3 {
+	position: relative;
+	overflow: hidden;
+	padding: 0.5em 0;
+}
+figure.effect_text_three h3::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	content: '';
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+}
+figure.effect_text_three:hover h3::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+figure.effect_text_three p {
+	padding: 1em 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+figure.effect_text_three:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.btn {
+    font-size: 18px;
+    height: 55px;
+    width: 140px;
+    border: none;
+    background: #ff9800db;
+    color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;  
+}
+.btn:hover {
+    background: rgba(0,0,0,0);
+    color: #ff9800db;;
+    box-shadow: inset 0 0 0 3px #ff9800db;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-family: cursive;
+  }
+
+  .expo {
+    font-size: 22px!important;
+    font-family: cursive!important;
+}
+
+h4 {
+    font-family: cursive;
+}
