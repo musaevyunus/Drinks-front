@@ -24,7 +24,6 @@ export const produktSlice = createSlice({
         biulder
         .addCase(fetchProdukt.fulfilled, (state, action) => {
             state.produkts = action.payload
-            console.log(action.payload);
         })
     }
 })

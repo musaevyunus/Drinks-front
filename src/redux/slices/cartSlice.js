@@ -16,6 +16,21 @@ export const fetchCart = createAsyncThunk(
   }
 );
 
+export const createCart = createAsyncThunk(
+  "create/cart",
+  async (user, thunkAPI) => {
+    try {
+      await fetch("http://localhost:4000/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user }),
+      });
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 export const deleteItemFromCart = createAsyncThunk(
   "deleteItem/cart",
   async ({ id, itemId }, thunkAPI) => {
@@ -83,6 +98,25 @@ export const itemMinus = createAsyncThunk(
   }
 );
 
+export const addProductToCart = createAsyncThunk(
+  "addProduct/cart",
+  async ({ id, item }, thunkAPI) => {
+    try {
+      const addedProduct = await fetch(
+        `http://localhost:4000/cart/addToBasket/${id}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ item }),
+        }
+      );
+      return addedProduct.json();
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -122,6 +156,11 @@ export const cartSlice = createSlice({
           }
           return item;
         });
+      })
+      .addCase(addProductToCart.fulfilled, (state, action) => {
+        state.cart.items.push(
+          action.payload.items[action.payload.items.length - 1]
+        );
       });
   },
 });
