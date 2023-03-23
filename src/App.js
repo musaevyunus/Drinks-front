@@ -5,7 +5,7 @@ import "./App.css";
 
 import Authorization from "./pages/Authorization/Authorizaation";
 import Cart from "./pages/CartPage/Cart";
-import Home from "./pages/Home/Home";
+import Home from "./components/Home/Home";
 import Registration from "./pages/RegistrationPage/Registration";
 
 function App() {
