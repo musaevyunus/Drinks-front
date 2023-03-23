@@ -9,7 +9,6 @@ const Authorization = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const token = useSelector((state) => state.users)
 
   React.useEffect(() => {
     dispatch(fetchUsers());

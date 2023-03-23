@@ -33,10 +33,18 @@
         border: 1px solid rgba($color: #000000, $alpha: 0.2);
         padding: 20px;
         margin-bottom: 30px;
+        .itemName {
+          min-width: 100px;
+        }
         .item_counter {
           display: flex;
           align-items: center;
-          gap: 15px;
+          justify-content: space-between;
+          min-width: 110px;
+          .itemCount {
+            min-width: 42px;
+            text-align: center;
+          }
           #item_action button {
             font-size: 17px;
             background-color: transparent;
@@ -56,6 +64,9 @@
             padding: 2px 8px 3px 8px;
             border-radius: 50%;
           }
+        }
+        .itemPrice {
+          min-width: 50px; 
         }
         .itemDelete button {
           padding: 2px 9px 4px 9px;

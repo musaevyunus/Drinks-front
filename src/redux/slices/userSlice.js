@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
-  loggedUser: null,
-  token: null,
+  loggedUser: JSON.parse(localStorage.getItem("loggedUser")),
+  token: localStorage.getItem("token"),
+  registeredUser: null,
 };
 
 function parseJwt(token) {
@@ -88,6 +89,7 @@ export const userSlice = createSlice({
       })
       .addCase(registration.fulfilled, (state, action) => {
         state.users.push(action.payload);
+        state.registeredUser = action.payload;
       })
       .addCase(authorization.fulfilled, (state, action) => {
         localStorage.setItem("token", action.payload.token);

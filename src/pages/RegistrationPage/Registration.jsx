@@ -1,14 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Registration.module.scss";
-import { registration } from "../../redux/slices/userSlice";
+import { fetchUsers, registration } from "../../redux/slices/userSlice";
+import { createCart } from "../../redux/slices/cartSlice";
 
 const Registration = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const registeredUser = useSelector((state) => state.users.registeredUser);
+
+  console.log(registeredUser);
+
+  React.useEffect(() => {
+    dispatch(fetchUsers());
+  }, dispatch);
+
+  React.useEffect(() => {
+    if (registeredUser) {
+      dispatch(createCart(registeredUser._id));
+    }
+  }, [registeredUser]);
 
   const handleRegistration = () => {
     dispatch(registration({ username, password }));
